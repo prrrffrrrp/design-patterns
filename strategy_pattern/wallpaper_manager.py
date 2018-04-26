@@ -46,3 +46,8 @@ class ScaledStrategy:
         in_img = Image.open(img_file)
         out_img = in_img.resize(desktop_size)
         return out_img
+
+
+paper = TiledStrategy()
+paper.make_background('Utilities_Color_Mix_Circle_3_XnView-MP-300x300.png', (1920, 1080))
+
