@@ -1,26 +1,20 @@
 class Army(object):
     def train_swordsman(self):
-        raise NotImplementedError()
+        pass
 
     def train_lancer(self):
-        raise NotImplementedError()
+        pass
 
     def train_archer(self):
-        raise NotImplementedError()
+        pass
 
 
 class Soldier(object):
-    def __init__(self):
-        self._name = None
-        self._army_type = None
-        self._type = None
-        self._local_type = None
-
-    #  def __str__(self):
-    #      return (self._local_type + ' ' +
-    #              self._name + ', ' +
-    #              self._army_type + ' ' +
-    #              self._type.lower())
+    def __init__(self, name, army_type, local_type):
+        self._name = name
+        self._army_type = army_type
+        self._type = self.__class__.__name__
+        self._local_type = local_type
 
     def introduce(self):
         return (self._local_type + ' ' +
@@ -30,27 +24,15 @@ class Soldier(object):
 
 
 class Swordsman(Soldier):
-    def __init__(self, name, army_type, local_type):
-        self._name = name
-        self._army_type = army_type
-        self._type = self.__class__.__name__
-        self._local_type = local_type
+    pass
 
 
 class Lancer(Soldier):
-    def __init__(self, name, army_type, local_type):
-        self._name = name
-        self._army_type = army_type
-        self._type = self.__class__.__name__
-        self._local_type = local_type
+    pass
 
 
 class Archer(Soldier):
-    def __init__(self, name, army_type, local_type):
-        self._name = name
-        self._army_type = army_type
-        self._type = self.__class__.__name__
-        self._local_type = local_type
+    pass
 
 
 class EuropeanArmy(Army):
