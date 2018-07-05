@@ -18,50 +18,89 @@
 #  If the result has no decimal places, you should return it as int(),
 #  in other case - round it to the 2 decimal points.
 ############################################################################
+import math
+
 
 class Figure(object):
-    def __init__(self, param):
-        self._param = param
+    @staticmethod
+    def volume(self):
+        return 0
 
 
-class Circle:
-    def perimeter(self):
+class Circle(Figure):
+    @staticmethod
+    def perimeter(param):
+        print('Circle perimeter: pi x diameter')
+        return math.pi * param
+
+    @staticmethod
+    def area(param):
         pass
 
+
+class Triangle(Figure):
+    @staticmethod
+    def perimeter(param):
+        print("Triangle perimeter: a + b + c")
+        return param * 3
+
+    @staticmethod
+    def area(param):
+        pass
+
+
+class Square(Figure):
+    @staticmethod
+    def perimeter(param):
+        print("Square perimeter: a x 4")
+        return param * 4
+
+    @staticmethod
+    def area(param):
+        pass
+
+
+class Pentagon(Figure):
+    @staticmethod
+    def perimeter(param):
+        pass
+
+    @staticmethod
+    def area(param):
+        pass
+
+
+class Hexagon(Figure):
+    @staticmethod
+    def perimeter(param):
+        pass
+
+    @staticmethod
+    def area(param):
+        pass
+
+
+class Cube(Figure):
+    @staticmethod
+    def perimeter(param):
+        pass
+
+    @staticmethod
     def area(self):
         pass
 
-
-class Circle:
-    def perimeter(self):
-        pass
-
-    def area(self):
-        pass
+    @staticmethod
+    def volume(param):
+        return param ** 3
 
 
-class Circle:
-    def perimeter(self):
-        pass
+class Parameters:
+    def __init__(cls, param):
+        cls.param = param
 
-    def area(self):
-        pass
-
-
-class Circle:
-    def perimeter(self):
-        pass
-
-    def area(self):
-        pass
-
-
-
-
-
-
-
-
+    @classmethod
+    def choose_figure(cls, figure_class):
+        return figure_class
 
 
 ###########################################################################
