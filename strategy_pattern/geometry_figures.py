@@ -23,7 +23,7 @@ import math
 
 class Figure(object):
     @staticmethod
-    def volume(self):
+    def volume(param):
         return 0
 
 
@@ -35,7 +35,8 @@ class Circle(Figure):
 
     @staticmethod
     def area(param):
-        pass
+        print('Circle area: pi x radius ** 2')
+        return math.pi * param
 
 
 class Triangle(Figure):
@@ -86,7 +87,7 @@ class Cube(Figure):
         pass
 
     @staticmethod
-    def area(self):
+    def area(param):
         pass
 
     @staticmethod
@@ -94,13 +95,22 @@ class Cube(Figure):
         return param ** 3
 
 
-class Parameters:
-    def __init__(cls, param):
-        cls.param = param
+class Parameters(object):
+    def __init__(self, param):
+        self.param = param
+        self.figure = None
 
-    @classmethod
-    def choose_figure(cls, figure_class):
-        return figure_class
+    def choose_figure(self, figure_class):
+        self.figure = figure_class
+
+    def perimeter(self):
+        return self.figure.perimeter(self.param)
+
+    def area(self):
+        return self.figure.area(self.param)
+
+    def volume(self):
+        return self.figure.volume(self.param)
 
 
 ###########################################################################
